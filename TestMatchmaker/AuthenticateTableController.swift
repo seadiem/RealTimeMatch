@@ -58,6 +58,7 @@ class AuthenticateTableController: UITableViewController {
     }
     
     func showMatchmaker() {
+        print("tap")
     }
 }
 
