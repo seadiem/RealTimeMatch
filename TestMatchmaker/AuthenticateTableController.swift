@@ -16,10 +16,7 @@ class AuthenticateTableController: UITableViewController {
     override func viewDidLoad() {
         tableView.contentInset.top += 18
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "content")
-        func getLogin() -> (UIViewController?, Error?) -> () {
-            return login
-        }
-        GKLocalPlayer.localPlayer().authenticateHandler = getLogin()
+        showLogin()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,6 +44,7 @@ class AuthenticateTableController: UITableViewController {
         let cell = model.cells[indexPath.row]
         switch cell {
         case .one: showMatchmaker()
+        case .two: showLogin()
         default: break
         }
     }
@@ -58,7 +56,37 @@ class AuthenticateTableController: UITableViewController {
     }
     
     func showMatchmaker() {
-        print("tap")
+        let request = GKMatchRequest()
+        request.minPlayers = 2
+        request.maxPlayers = 2
+        let gamemaker = GKMatchmakerViewController(matchRequest: request)
+        gamemaker?.matchmakerDelegate = self
+        show(gamemaker!, sender: self)
+    }
+    
+    func showLogin() {
+        func getLogin() -> (UIViewController?, Error?) -> () {
+            return login
+        }
+        GKLocalPlayer.localPlayer().authenticateHandler = getLogin()
+    }
+    
+}
+
+extension AuthenticateTableController: GKMatchmakerViewControllerDelegate {
+    func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
+        presentedViewController?.dismiss(animated: true, completion: nil)
+        print(match)
+    }
+    func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
+        presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error) {
+        presentedViewController?.dismiss(animated: true, completion: nil)
+        print(error)
+    }
+    func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer]) {
+        print(players)
     }
 }
 

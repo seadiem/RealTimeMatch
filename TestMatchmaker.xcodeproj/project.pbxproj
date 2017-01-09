@@ -14,6 +14,7 @@
 		9F0D7D001E23F1D400DB00F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0D7CFE1E23F1D400DB00F3 /* LaunchScreen.storyboard */; };
 		9F0D7D091E23F2B800DB00F3 /* AuthenticateTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D7D071E23F2B800DB00F3 /* AuthenticateTableController.swift */; };
 		9F0D7D0A1E23F2B800DB00F3 /* AuthenticateTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D7D081E23F2B800DB00F3 /* AuthenticateTableModel.swift */; };
+		9F0D7D0F1E24019700DB00F3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0D7D0E1E24019700DB00F3 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9F0D7D011E23F1D400DB00F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F0D7D071E23F2B800DB00F3 /* AuthenticateTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateTableController.swift; sourceTree = "<group>"; };
 		9F0D7D081E23F2B800DB00F3 /* AuthenticateTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateTableModel.swift; sourceTree = "<group>"; };
+		9F0D7D0E1E24019700DB00F3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0D7D0F1E24019700DB00F3 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				9F0D7CF41E23F1D400DB00F3 /* TestMatchmaker */,
 				9F0D7CF31E23F1D400DB00F3 /* Products */,
+				9F0D7D0B1E23FE4D00DB00F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +72,14 @@
 				9F0D7D011E23F1D400DB00F3 /* Info.plist */,
 			);
 			path = TestMatchmaker;
+			sourceTree = "<group>";
+		};
+		9F0D7D0B1E23FE4D00DB00F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F0D7D0E1E24019700DB00F3 /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +116,11 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = P7U6FMRH9V;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -273,7 +290,7 @@
 				INFOPLIST_FILE = TestMatchmaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shina.test.TestMatchmaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mtvdesignsoft.TestMatchmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -287,7 +304,7 @@
 				INFOPLIST_FILE = TestMatchmaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shina.test.TestMatchmaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mtvdesignsoft.TestMatchmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
