@@ -16,6 +16,8 @@ class AuthenticateTableController: UITableViewController {
     override func viewDidLoad() {
         tableView.contentInset.top += 18
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "content")
+        let localplayer = GKLocalPlayer.localPlayer()
+        localplayer.register(self)
         showLogin()
     }
     
@@ -45,6 +47,8 @@ class AuthenticateTableController: UITableViewController {
         switch cell {
         case .one: showMatchmaker()
         case .two: showLogin()
+        case .three: showPlayers()
+        case .four: showMatch()
         default: break
         }
     }
@@ -71,22 +75,52 @@ class AuthenticateTableController: UITableViewController {
         GKLocalPlayer.localPlayer().authenticateHandler = getLogin()
     }
     
+    func showPlayers() {
+        guard let players = players else { return }
+        for item in players {
+            print("\(item.guestIdentifier), \(item.displayName)")
+        }
+    }
+    
+    func showMatch() {
+        guard let match = match else { return }
+        for item in match.players {
+            print("\(item.guestIdentifier), \(item.displayName)")
+        }
+    }
+    
+    var match: GKMatch?
+    var players: [GKPlayer]?
 }
 
 extension AuthenticateTableController: GKMatchmakerViewControllerDelegate {
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
         presentedViewController?.dismiss(animated: true, completion: nil)
+        print("find")
         print(match)
+        self.match = match
     }
     func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
         presentedViewController?.dismiss(animated: true, completion: nil)
     }
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error) {
         presentedViewController?.dismiss(animated: true, completion: nil)
+        print("error")
         print(error)
     }
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer]) {
+        print("host")
         print(players)
+        self.players = players
+    }
+}
+
+extension AuthenticateTableController: GKLocalPlayerListener {
+    func player(_ player: GKPlayer, didAccept invite: GKInvite) {
+        print(invite)
+    }
+    func player(_ player: GKPlayer, didRequestMatchWithRecipients recipientPlayers: [GKPlayer]) {
+        print(recipientPlayers)
     }
 }
 

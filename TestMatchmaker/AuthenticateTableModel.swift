@@ -10,11 +10,14 @@ struct AuthenticateTableModel {
         case one
         case two
         case three
+        case four
         case other
         var text: String {
             switch self {
-            case .one: return "One"
+            case .one: return "Show matchmaker"
             case .two: return "Login"
+            case .three: return "Show players"
+            case .four: return "Show match"
             case .other: return "Other"
             default: return "None determine"
             }
@@ -25,6 +28,6 @@ struct AuthenticateTableModel {
     let cells: [Cell]
     
     init() {
-        cells = [Cell.one, Cell.two, Cell.other]
+        cells = [Cell.one, Cell.two, Cell.three, Cell.four]
     }
 }
