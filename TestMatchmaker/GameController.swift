@@ -50,7 +50,7 @@ extension GameController {
         guard let data = Network.makeDataFromCircle(circle: modeltoencode) else { return }
         guard let match = match else { return }
         do {
-            try match.sendData(toAllPlayers: data, with: GKMatchSendDataMode.reliable)
+            try match.sendData(toAllPlayers: data, with: GKMatchSendDataMode.unreliable)
         } catch let error {
             print(error)
         }
