@@ -13,6 +13,10 @@
 		9F0D7D091E23F2B800DB00F3 /* AuthenticateTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D7D071E23F2B800DB00F3 /* AuthenticateTableController.swift */; };
 		9F0D7D0A1E23F2B800DB00F3 /* AuthenticateTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D7D081E23F2B800DB00F3 /* AuthenticateTableModel.swift */; };
 		9F0D7D0F1E24019700DB00F3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0D7D0E1E24019700DB00F3 /* GameKit.framework */; };
+		9FC28BE91E3A1ED900D06654 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BE81E3A1ED900D06654 /* GameView.swift */; };
+		9FC28BEB1E3A200E00D06654 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BEA1E3A200E00D06654 /* GameController.swift */; };
+		9FC28BEE1E3A204F00D06654 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BED1E3A204F00D06654 /* Protocols.swift */; };
+		9FC28BF21E3A23FE00D06654 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BF11E3A23FE00D06654 /* Shape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		9F0D7D071E23F2B800DB00F3 /* AuthenticateTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateTableController.swift; sourceTree = "<group>"; };
 		9F0D7D081E23F2B800DB00F3 /* AuthenticateTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateTableModel.swift; sourceTree = "<group>"; };
 		9F0D7D0E1E24019700DB00F3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9FC28BE81E3A1ED900D06654 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		9FC28BEA1E3A200E00D06654 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		9FC28BED1E3A204F00D06654 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		9FC28BF11E3A23FE00D06654 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		9F0D7CF41E23F1D400DB00F3 /* TestMatchmaker */ = {
 			isa = PBXGroup;
 			children = (
+				9FC28BEC1E3A203900D06654 /* Protocols */,
 				9FC28BE41E3A1D7A00D06654 /* Model */,
 				9FC28BE71E3A1DCF00D06654 /* View */,
 				9FC28BE51E3A1DB000D06654 /* Controller */,
@@ -79,6 +88,7 @@
 		9FC28BE41E3A1D7A00D06654 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9FC28BF11E3A23FE00D06654 /* Shape.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -87,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				9F0D7CF51E23F1D400DB00F3 /* AppDelegate.swift */,
+				9FC28BEA1E3A200E00D06654 /* GameController.swift */,
 				9FC28BE61E3A1DC300D06654 /* Authentication */,
 			);
 			name = Controller;
@@ -104,8 +115,17 @@
 		9FC28BE71E3A1DCF00D06654 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FC28BE81E3A1ED900D06654 /* GameView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		9FC28BEC1E3A203900D06654 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9FC28BED1E3A204F00D06654 /* Protocols.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +206,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0D7CF61E23F1D400DB00F3 /* AppDelegate.swift in Sources */,
+				9FC28BEB1E3A200E00D06654 /* GameController.swift in Sources */,
 				9F0D7D091E23F2B800DB00F3 /* AuthenticateTableController.swift in Sources */,
+				9FC28BEE1E3A204F00D06654 /* Protocols.swift in Sources */,
+				9FC28BE91E3A1ED900D06654 /* GameView.swift in Sources */,
 				9F0D7D0A1E23F2B800DB00F3 /* AuthenticateTableModel.swift in Sources */,
+				9FC28BF21E3A23FE00D06654 /* Shape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

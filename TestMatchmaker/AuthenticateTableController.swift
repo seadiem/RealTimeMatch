@@ -124,6 +124,13 @@ extension AuthenticateTableController: GKLocalPlayerListener {
     }
 }
 
+extension AuthenticateTableController {
+    func showGame() {
+        let controller = GameController()
+        show(controller, sender: self)
+    }
+}
+
 
 
 
