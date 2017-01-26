@@ -29,6 +29,12 @@ class GameView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        let ctx = UIGraphicsGetCurrentContext()
+        ctx?.setFillColor(UIColor.darkGray.cgColor)
+        ctx?.fill(rect)
+        
         for item in model {
             item.draw()
         }

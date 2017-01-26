@@ -49,6 +49,7 @@ class AuthenticateTableController: UITableViewController {
         case .two: showLogin()
         case .three: showPlayers()
         case .four: showMatch()
+        case .five: showGame()
         default: break
         }
     }
@@ -99,6 +100,8 @@ extension AuthenticateTableController: GKMatchmakerViewControllerDelegate {
         print("find")
         print(match)
         self.match = match
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AuthenticateTableController.showGame), userInfo: nil, repeats: false)
+        showGame()
     }
     func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
         presentedViewController?.dismiss(animated: true, completion: nil)

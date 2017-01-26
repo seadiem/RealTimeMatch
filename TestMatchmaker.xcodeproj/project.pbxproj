@@ -17,6 +17,7 @@
 		9FC28BEB1E3A200E00D06654 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BEA1E3A200E00D06654 /* GameController.swift */; };
 		9FC28BEE1E3A204F00D06654 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BED1E3A204F00D06654 /* Protocols.swift */; };
 		9FC28BF21E3A23FE00D06654 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BF11E3A23FE00D06654 /* Shape.swift */; };
+		9FC28BF51E3A3B7700D06654 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC28BF41E3A3B7700D06654 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9FC28BEA1E3A200E00D06654 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		9FC28BED1E3A204F00D06654 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9FC28BF11E3A23FE00D06654 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		9FC28BF41E3A3B7700D06654 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		9F0D7CF41E23F1D400DB00F3 /* TestMatchmaker */ = {
 			isa = PBXGroup;
 			children = (
+				9FC28BF31E3A3B5400D06654 /* Network */,
 				9FC28BEC1E3A203900D06654 /* Protocols */,
 				9FC28BE41E3A1D7A00D06654 /* Model */,
 				9FC28BE71E3A1DCF00D06654 /* View */,
@@ -106,8 +109,8 @@
 		9FC28BE61E3A1DC300D06654 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				9F0D7D071E23F2B800DB00F3 /* AuthenticateTableController.swift */,
 				9F0D7D081E23F2B800DB00F3 /* AuthenticateTableModel.swift */,
+				9F0D7D071E23F2B800DB00F3 /* AuthenticateTableController.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -126,6 +129,14 @@
 				9FC28BED1E3A204F00D06654 /* Protocols.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9FC28BF31E3A3B5400D06654 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9FC28BF41E3A3B7700D06654 /* Network.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 			files = (
 				9F0D7CF61E23F1D400DB00F3 /* AppDelegate.swift in Sources */,
 				9FC28BEB1E3A200E00D06654 /* GameController.swift in Sources */,
+				9FC28BF51E3A3B7700D06654 /* Network.swift in Sources */,
 				9F0D7D091E23F2B800DB00F3 /* AuthenticateTableController.swift in Sources */,
 				9FC28BEE1E3A204F00D06654 /* Protocols.swift in Sources */,
 				9FC28BE91E3A1ED900D06654 /* GameView.swift in Sources */,
