@@ -101,7 +101,6 @@ extension AuthenticateTableController: GKMatchmakerViewControllerDelegate {
         print(match)
         self.match = match
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AuthenticateTableController.showGame), userInfo: nil, repeats: false)
-        showGame()
     }
     func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
         presentedViewController?.dismiss(animated: true, completion: nil)
@@ -130,6 +129,7 @@ extension AuthenticateTableController: GKLocalPlayerListener {
 extension AuthenticateTableController {
     func showGame() {
         let controller = GameController()
+        controller.match = match
         show(controller, sender: self)
     }
 }
